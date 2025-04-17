@@ -2,10 +2,7 @@
     "student101": {
         "name": "Alice Johnson",
         "grades": [
-            85,
-            92,
-            78,
-            90
+            50.0
         ]
     },
     "student104": {
@@ -15,6 +12,33 @@
             90.0,
             90.0,
             89.0
+        ]
+    },
+    "student121": {
+        "name": "Micheal Williams",
+        "grades": [
+            99.0,
+            32.0
+        ]
+    },
+    "student123": {
+        "name": "Ali Jasem",
+        "grades": [
+            12.0,
+            13.0,
+            43.0,
+            37.0
+        ]
+    },
+    "student789": {
+        "name": "Abrar Mohammed",
+        "grades": [
+            100.0,
+            95.0,
+            97.0,
+            99.0,
+            100.0,
+            98.0
         ]
     }
 }
