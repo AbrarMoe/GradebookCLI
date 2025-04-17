@@ -1,18 +1,20 @@
 {
     "student101": {
         "name": "Alice Johnson",
-        "grades": [85, 92, 78, 90]
-    },
-    "student102": {
-        "name": "Bob Smith",
-        "grades": [75, 80, 82, 70]
-    },
-    "student103": {
-        "name": "Charlie Brown",
-        "grades": [90, 88, 91, 87]
+        "grades": [
+            85,
+            92,
+            78,
+            90
+        ]
     },
     "student104": {
         "name": "Diana Prince",
-        "grades": [95, 93, 88, 92]
+        "grades": [
+            90.0,
+            90.0,
+            90.0,
+            89.0
+        ]
     }
 }
