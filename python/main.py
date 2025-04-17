@@ -11,8 +11,9 @@ def admin_menu():
         print("2. Update Student Record")
         print("3. Delete Student Record")
         print("4. View Statistics")
-        print("5. Exit")
-        choice = input("Enter your choice (1-5): ").strip()
+        print("5. Sort Students")
+        print("6. Exit")
+        choice = input("Enter your choice (1-6): ").strip()
 
         if choice == "1":
             student_id = input("Enter Student ID: ").strip()
@@ -57,6 +58,26 @@ def admin_menu():
             statistics.generate_statistics(records)
 
         elif choice == "5":
+            records = student_manager.load_student_records()
+            if not records:
+                print("No records to sort.")
+                continue
+            print("\nSort by:")
+            print("1. GPA (highest first)")
+            print("2. Name (alphabetical)")
+            sort_choice = input("Enter your choice (1-2): ").strip()
+            if sort_choice == "1":
+                sorted_students = statistics.sort_students(records, sort_by='gpa')
+            elif sort_choice == "2":
+                sorted_students = statistics.sort_students(records, sort_by='name')
+            else:
+                print("Invalid choice.")
+                continue
+            print("\n=== Sorted Students ===")
+            for student in sorted_students:
+                print(f"ID: {student[0]}, Name: {student[1]}, GPA: {student[2]:.2f}")
+
+        elif choice == "6":
             print("Exiting Admin Menu.")
             break
 
@@ -76,15 +97,14 @@ def student_menu(username):
 def main():
     print("=== Student Grade Management System ===")
     
-    # Predefined users; you can later extend this as needed.
+    # Predefined users
     users = {
-    "admin": {"password": "adminpass", "role": "admin"},
-    "student101": {"password": "studpass", "role": "student"},
-    "student102": {"password": "studpass102", "role": "student"},
-    "student103": {"password": "studpass103", "role": "student"},
-    "student104": {"password": "studpass104", "role": "student"}
-}
-
+        "admin": {"password": "adminpass", "role": "admin"},
+        "student101": {"password": "studpass", "role": "student"},
+        "student102": {"password": "studpass102", "role": "student"},
+        "student103": {"password": "studpass103", "role": "student"},
+        "student104": {"password": "studpass104", "role": "student"}
+    }
 
     username, role = authentication.authenticate(users)
     if not username:
