@@ -1,5 +1,3 @@
-# authentication.py
-
 def authenticate(users):
     username = input("Enter username: ").strip()
     password = input("Enter password: ").strip()
@@ -13,7 +11,6 @@ def authenticate(users):
         return None, None
 
 if __name__ == "__main__":
-    # Quick test when running this file by itself
     test_users = {
         "admin": {"password": "adminpass", "role": "admin"},
         "student101": {"password": "studpass", "role": "student"}

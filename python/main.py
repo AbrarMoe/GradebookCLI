@@ -1,5 +1,3 @@
-# main.py
-
 import authentication
 import student_manager
 import statistics
@@ -108,7 +106,7 @@ def main():
 
     username, role = authentication.authenticate(users)
     if not username:
-        return  # Stop if authentication fails
+        return  
 
     if role == "admin":
         admin_menu()

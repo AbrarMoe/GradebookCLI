@@ -1,13 +1,12 @@
 import json
 import os
 
-# File name for storing student records (in the same folder as this script)
 DATA_FILE = "student_records.json"
 
 def load_student_records():
     """Load student records from a JSON file. Returns a dictionary."""
     if not os.path.exists(DATA_FILE):
-        return {}  # Return empty if file doesn't exist
+        return {} 
     with open(DATA_FILE, "r") as file:
         return json.load(file)
 

@@ -19,7 +19,6 @@ def generate_statistics(records):
         gpa = compute_gpa(rec["grades"])
         stats_list.append((student_id, rec["name"], gpa))
         
-        # Categorize GPA into grades
         if gpa >= 90:
             grade_counts['A'] += 1
         elif gpa >= 80:
@@ -31,7 +30,6 @@ def generate_statistics(records):
         else:
             grade_counts['F'] += 1
 
-    # Calculate average, highest, and lowest GPA
     total_gpa = sum(gpa for _, _, gpa in stats_list)
     average_gpa = total_gpa / len(stats_list) if stats_list else 0
     highest = max(stats_list, key=lambda x: x[2], default=None)
